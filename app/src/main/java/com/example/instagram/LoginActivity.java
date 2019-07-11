@@ -14,7 +14,7 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText usernameInput;
     private EditText passwordInput;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         if (currentUser != null) {
             // do stuff with the user
             Log.d("LoginActivity", "Success");
-            final Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            final Intent intent = new Intent(LoginActivity.this, ComposeActivity.class);
             startActivity(intent);
             finish();
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     public void done(ParseException e) {
                         if (e == null) {
                             Log.d("SignUpActivity", "Sign Up Success");
-                            final Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                            final Intent intent = new Intent(LoginActivity.this, ComposeActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void done(ParseUser user, ParseException e) {
                 if (e == null){
                     Log.d("LoginActivity", "Login Successful");
-                    final Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    final Intent intent = new Intent(LoginActivity.this, ComposeActivity.class);
                     startActivity(intent);
                     finish();
                 }
