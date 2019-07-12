@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import com.example.instagram.model.Post;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -36,7 +35,6 @@ public class ComposeActivity extends AppCompatActivity {
     private ImageView ivPostImage;
     private Button captureButton;
 
-    private BottomNavigationView bottomNavigationView;
 
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
@@ -74,25 +72,7 @@ public class ComposeActivity extends AppCompatActivity {
                 createPost(description, user, parseFile);
 
             }
-        });
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//                switch (menuItem.getItemId()) {
-//                    case R.id.action_home:
-//                        // do something here
-//                        return true;
-//                    case R.id.action_compose:
-//                        // do something here
-//                        return true;
-//                    case R.id.action_profile:
-//                        // do something here
-//                        return true;
-//                    default: return true;
-//                }
-//            }
-//        });
-
+     });
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,9 +190,6 @@ public class ComposeActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
-
 
 }
